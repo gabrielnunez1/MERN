@@ -6,13 +6,34 @@
   height: 40vmin;
 }
 
-.App-header,.App-section,.App-login,.App-home {
+.App-header,.App-section,.App-login,.App-home{
   background-color: #ffffff;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
+}
+.App-header img {
+	width: 40% !important;
+}
+
+.ml-auto .dropdown-menu.show{
+	margin-left: -124px;
+}
+
+.ml-auto .nav-link{
+color:rgba(0, 0, 0, 0) !important;
+}
+
+.carousel-item.active{
+	display: inline-flex;
+}
+.carousel-item-left{
+	width:50%;
+}
+.carousel-item-rigth{
+	width:50%;
 }
 
 .App-link {
@@ -34,3 +55,7 @@
 .create{
 margin: 10px;;
 }
+
+/* .navbar-dark .navbar-nav .nav-link {
+	display:none;
+} */
