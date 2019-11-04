@@ -1,28 +1,26 @@
 import React from 'react';
 import './App.css';
-import Header from './Header';
-import Section from './Section';
+import Menu from './Menu';
 import Login from './Login';
-import Home from './Home';
-import Carrousel from './Carrousel';
+
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 
 
 function App() {
   return (
-		<React.Fragment>
-			<Router>
-				<div className="App">
-					<Login></Login>
-					<Header></Header>
-					<Section></Section>
-					<Carrousel></Carrousel>
-					<Home></Home>
-				</div> 
+					<div className="App">
+					<Router>
+							<Switch> 
+								
+							<Route exact path="/" component={Menu}/>
+								<Route path="/Login" component={Login}/> 
+					
+							</Switch>
 
-			</Router>
-		</React.Fragment>
-		
+					</Router>
+					</div> 
+
   );
 }
 
