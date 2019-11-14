@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from '.react-redux';
-import { createStore } from '.react';
-import productReducer from './reducers/productReducer';
+// import { Provider } from '.react-redux';
+// import { createStore } from '.react';
+// import productReducer from './reducers/productReducer';
 
-const store = createStore(productReducer);
-ReactDOM.render( <Provider store={store}>
+// const store = createStore(productReducer);
+
+ ReactDOM.render( //<Provider store={store}>
 <App />
-</Provider>, document.getElementById('root'));
+/*</Provider> */, document.getElementById('root'));
 
 
 

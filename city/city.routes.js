@@ -1,10 +1,9 @@
 const router = require('express').Router()
-const productController = require('./city.controller')
+const cityController = require('./city.controller')
 
-
-router.get("/stock/products",productController.getProducts)
-router.get("/stock/product/:pepe",productController.getProduct)
-
-
+router.get("/city/",cityController.getCities)
+router.get("/city/:id",cityController.getCitiesId)
+router.post("/city/cities",cityController.createCity)
+router.delete("/city/delete/:id",cityController.deleteCitiesId)
 
 module.exports = router
