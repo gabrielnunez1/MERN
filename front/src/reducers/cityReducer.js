@@ -1,6 +1,6 @@
-const productReducer = (state=[], action)=>{
+const cityReducer = (state=[], action)=>{
     switch(action.type){
-        case 'ADD_PRD':
+        case 'ADD_PROD':
             return[
                 // Desarma el array y lo junta
                 ...state,
@@ -11,7 +11,7 @@ const productReducer = (state=[], action)=>{
             ]
             case 'DELETE_PROD':
                 let state2=state.slice();
-                return state2.filter((prod)=>{return prod._id!==action.payload})
+                return state2.filter((prod)=>{return prod._id!==action.payload});
                 // state.map(())
             default:
                 return state
@@ -19,4 +19,4 @@ const productReducer = (state=[], action)=>{
     }
 }
 
-export default productReducer
+export default cityReducer

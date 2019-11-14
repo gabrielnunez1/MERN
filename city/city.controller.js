@@ -9,7 +9,7 @@ const getCitiesId = (req,res)=>{
 
 const createCity = (req,res)=>{
     console.log(req.body)
-    city.create({nombre:req.body.nombre}).then((createdCity)=>{
+    city.create({nombre:req.body.nombre,categoria:req.body.categoria}).then((createdCity)=>{
         res.json(createdCity).status(200)
     }).catch((err)=>{
         res.json(err).status(500)
