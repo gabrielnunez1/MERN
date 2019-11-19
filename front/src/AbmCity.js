@@ -3,7 +3,7 @@ import './App.css';
 import Buscador from './Buscador';
 import FormItem from './FormItem';
 import Boton from './Boton';
-import {addCity,getCity} from './actions/cityActions';
+import { getCity, addCity } from './actions/cityActions';
 import { connect } from 'react-redux'
 
 class AbmCity extends React.Component {
@@ -47,8 +47,8 @@ submitForm =()=>{
 
 componentDidMount(){
   console.log("this")
-  console.log(this)
-  this.props.getcity()
+  console.log(this.props)
+  this.props.getCity()
 }
 
   render(){
@@ -68,9 +68,9 @@ componentDidMount(){
           </form>
 
           <ul>
-            {this.props.cties.map((city)=>{
+            {this.props.cities &&   this.props.cities.filter((prod)=>{return prod.nombre && ( prod.nombre.indexOf(this.props.buscador)!=-1)}).map((city)=>{
               return (
-                <li onClick={()=>{this.deleteCit(city._id)}} key={city._id}>
+                <li  key={city._id}>
                   {city.nombre}
                 </li>
             
@@ -91,8 +91,11 @@ componentDidMount(){
 }
 
 const mapStateToProps = (state) => {
+/*   console.log("state2")
+  console.log(state) */
   return {
-    cties:state
+    products:state.productReducer,
+    buscador:state.buscadorReducer
   }
 }
-export default connect(mapStateToProps)(AbmCity);
+export default connect(mapStateToProps, {getCity})(AbmCity);

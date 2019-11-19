@@ -25,6 +25,6 @@ function getCity() {
   }
   
   
-export   {
-    addCity,deleteCity,getCity
+export {
+   getCity
 }
