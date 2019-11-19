@@ -3,7 +3,7 @@ import './App.css';
 import Buscador from './Buscador';
 import FormItem from './FormItem';
 import Boton from './Boton';
-import {addCity,deleteCity} from './actions/cityActions';
+import {addCity,getCity} from './actions/cityActions';
 import { connect } from 'react-redux'
 
 class AbmCity extends React.Component {
@@ -25,9 +25,9 @@ onChange2 = name => event => {
 
 }
 
-deleteCit=(id)=>{
-  this.props.dispatch(deleteCity(id));
-}
+// deleteCity=(id)=>{
+//   this.props.dispatch(deleteCity(id));
+// }
 
 submitForm =()=>{
   fetch("http://localhost:8080/city/cities",{
@@ -43,6 +43,12 @@ submitForm =()=>{
     this.props.dispatch(addCity(data)) 
   
   })
+}
+
+componentDidMount(){
+  console.log("this")
+  console.log(this)
+  this.props.getcity()
 }
 
   render(){

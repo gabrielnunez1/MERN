@@ -12,7 +12,8 @@ const cityReducer = (state=[], action)=>{
             case 'DELETE_PROD':
                 let state2=state.slice();
                 return state2.filter((prod)=>{return prod._id!==action.payload});
-                // state.map(())
+            case'GET_PROD':
+                return action.payload
             default:
                 return state
 
