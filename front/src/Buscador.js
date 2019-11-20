@@ -14,8 +14,6 @@ onChange2 = name => event => {
   let value_ = name === 'image'
   ? event.target.files[0]
   : event.target.value
-console.log("this.props")
-console.log(this.props)
   this.props.dispatch(updateBuscador(value_))
 
 }

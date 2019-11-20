@@ -10,8 +10,8 @@ class AbmCity extends React.Component {
  constructor(props){
    super(props);
    this.state= {
-     nombre:"",
-     categoria:""
+    country:"",
+     city:""
    }
  }
 
@@ -39,15 +39,14 @@ submitForm =()=>{
    }).then((res)=>{
     return res.json();
   }).then((data)=>{
-    console.log(data)
+
+
     this.props.dispatch(addCity(data)) 
   
   })
 }
 
 componentDidMount(){
-  console.log("this")
-  console.log(this.props)
   this.props.getCity()
 }
 
@@ -61,17 +60,17 @@ componentDidMount(){
         <hr/>
         <div className="asideform formulario">
           <form onSubmit={(e)=>{e.preventDefault()}}> 
-            nombre:      <input type="text"  onChange={this.onChange2('nombre')} placeholder="nombre"/> <br/>
-            categoria:      <input type="text"  onChange={this.onChange2('categoria')} placeholder="categoria"/>
+          country:      <input type="text"  onChange={this.onChange2('country')} placeholder="country"/> <br/>
+          city:      <input type="text"  onChange={this.onChange2('city')} placeholder="city"/>
 
-<input type="submit" onClick={()=>{this.submitForm()}}></input>
+          <input type="submit" onClick={()=>{this.submitForm()}}></input>
           </form>
 
           <ul>
-            {this.props.cities &&   this.props.cities.filter((prod)=>{return prod.nombre && ( prod.nombre.indexOf(this.props.buscador)!=-1)}).map((city)=>{
+            {this.props.cities &&   this.props.cities.filter((prod)=>{return prod.country && ( prod.country.indexOf(this.props.buscador)!=-1)}).map((city)=>{
               return (
                 <li  key={city._id}>
-                  {city.nombre}
+                  {city.country}
                 </li>
             
               )
@@ -91,10 +90,8 @@ componentDidMount(){
 }
 
 const mapStateToProps = (state) => {
-/*   console.log("state2")
-  console.log(state) */
   return {
-    products:state.productReducer,
+    cities:state.cityReducer,
     buscador:state.buscadorReducer
   }
 }

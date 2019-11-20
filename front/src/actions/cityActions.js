@@ -10,8 +10,6 @@ export const deleteCity= payload =>({
 
 function getCity() {
     return (dispatch,getState) => {
-      console.log("getState()")
-      console.log(getState())
       if(getState().length>0) return;
      return fetch('http://localhost:8080/city/').then((res)=>{
         return res.json()

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const citySchema =new mongoose.Schema({
-    nombre:String,
-    categoria:String
+    country:String,
+    city:String
 })
 
 module.exports = mongoose.model('cities',citySchema)

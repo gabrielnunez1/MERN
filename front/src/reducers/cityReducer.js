@@ -5,8 +5,8 @@ const cityReducer = (state=[], action)=>{
                 // Desarma el array y lo junta
                 ...state,
                 {
-                    nombre: action.payload.nombre,
-                    categoria: action.payload.categoria
+                    country: action.payload.country,
+                    city: action.payload.city
                 }
             ]
             case 'DELETE_PROD':
