@@ -72,7 +72,6 @@ componentDidMount(){
                 <li  key={city._id}>
                   {city.country}
                 </li>
-            
               )
             })}
           </ul>
