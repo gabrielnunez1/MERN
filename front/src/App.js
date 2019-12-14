@@ -4,6 +4,7 @@ import Menu from './Menu';
 import Login from './Login';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import AbmCity from './AbmCity';
+import Create from './Create';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
 
 				<Route path="/front/abmCity">
 				<AbmCity></AbmCity>
+				</Route>
+				<Route path="/front/Create">
+				<Create></Create>
 				</Route>
 			</Switch>
 	</Router>
